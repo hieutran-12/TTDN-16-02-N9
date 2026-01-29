@@ -55,6 +55,8 @@ Dự án này là một **giải pháp ERP doanh nghiệp** được xây dựng
 ## 📦 Các Module
 
 ### 1. **👥 Quản Lý Nhân Sự (nhan_su)**
+### 👥 Module Nhân Viên
+![Nhân viên](doc/Nhan_vien.jpg)
 
 **Mục đích**: Quản lý nhân viên, phòng ban, chức vụ, chứng chỉ
 
@@ -71,6 +73,8 @@ Dự án này là một **giải pháp ERP doanh nghiệp** được xây dựng
 ---
 
 ### 2. **🏢 Quản Lý Tài Sản (quan_ly_tai_san)**
+### 🏢 Module Quản Lý Tài Sản
+![Quản lý tài sản](doc/Quan_ly_tai_san.jpg)
 
 **Mục đích**: Quản lý vòng đời tài sản cố định & khấu hao tự động
 
@@ -89,6 +93,8 @@ Dự án này là một **giải pháp ERP doanh nghiệp** được xây dựng
 ---
 
 ### 3. **📊 Kế Toán & Tài Chính (tai_chinh_ke_toan)**
+### 🧾 Module Kế Toán
+![Kế toán](doc/Ke_toan.jpg)
 
 **Mục đích**: Quản lý kế toán, hóa đơn, bút toán theo chuẩn Việt Nam
 
