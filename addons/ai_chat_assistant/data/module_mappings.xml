@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Module Mapping Data
+        <record id="module_nhan_su_mapping" model="ir.model.data">
+            <field name="name">nhan_su</field>
+            <field name="module">ai_chat_assistant</field>
+        </record>
+
+        <record id="module_quan_ly_tai_san_mapping" model="ir.model.data">
+            <field name="name">quan_ly_tai_san</field>
+            <field name="module">ai_chat_assistant</field>
+        </record>
+
+        <record id="module_tai_chinh_ke_toan_mapping" model="ir.model.data">
+            <field name="name">tai_chinh_ke_toan</field>
+            <field name="module">ai_chat_assistant</field>
+        </record> -->
+    </data>
+</odoo>

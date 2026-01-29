@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ai_chat_log_user,ai.chat.log user,model_ai_chat_assistant_chat_log,base.group_user,1,1,1,1
+access_ai_chat_log_admin,ai.chat.log admin,model_ai_chat_assistant_chat_log,base.group_system,1,1,1,1

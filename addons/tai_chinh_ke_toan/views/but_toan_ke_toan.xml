@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view -->
+    <record id="view_but_toan_ke_toan_tree" model="ir.ui.view">
+        <field name="name">but.toan.ke.toan.tree</field>
+        <field name="model">but_toan_ke_toan</field>
+        <field name="arch" type="xml">
+            <tree string="Bút toán kế toán" decoration-success="state=='da_ghi_so'" decoration-muted="state=='nhap'">
+                <field name="name"/>
+                <field name="ngay_but_toan"/>
+                <field name="dien_giai"/>
+                <field name="loai_but_toan"/>
+                <field name="tong_tien_no"/>
+                <field name="tong_tien_co"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form view -->
+    <record id="view_but_toan_ke_toan_form" model="ir.ui.view">
+        <field name="name">but.toan.ke.toan.form</field>
+        <field name="model">but_toan_ke_toan</field>
+        <field name="arch" type="xml">
+            <form string="Bút toán kế toán">
+                <header>
+                    <button name="action_ghi_so" string="Ghi sổ" type="object" 
+                            states="nhap" class="oe_highlight"/>
+                    <button name="action_huy_ghi_so" string="Hủy ghi sổ" type="object" 
+                            states="da_ghi_so"/>
+                    <field name="state" widget="statusbar" statusbar_visible="nhap,da_ghi_so"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="ngay_but_toan" attrs="{'readonly': [('state', '=', 'da_ghi_so')]}"/>
+                            <field name="loai_but_toan" attrs="{'readonly': [('state', '=', 'da_ghi_so')]}"/>
+                            <field name="nguoi_tao_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="tong_tien_no" widget="monetary" readonly="1" string="💰 Tổng Nợ"/>
+                            <field name="tong_tien_co" widget="monetary" readonly="1" string="💰 Tổng Có"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="dien_giai" nolabel="1" attrs="{'readonly': [('state', '=', 'da_ghi_so')]}" placeholder="Nhập diễn giải..."/>
+                    </group>
+                    <separator string="📋 CHI TIẾT BỤT TOÁN" colspan="2"/>
+                    <field name="chi_tiet_ids" attrs="{'readonly': [('state', '=', 'da_ghi_so')]}" nolabel="1">
+                        <tree editable="bottom" string="Chi tiết Bút toán">
+                            <field name="tai_khoan_id" required="1"/>
+                            <field name="dien_giai" width="20%"/>
+                            <field name="tien_no" sum="Tổng Nợ" widget="monetary"/>
+                            <field name="tien_co" sum="Tổng Có" widget="monetary"/>
+                            <field name="doi_tac_id" width="15%"/>
+                            <field name="currency_id" invisible="1"/>
+                        </tree>
+                    </field>
+                    <notebook>
+                        <page string="Thông tin bổ sung">
+                            <group>
+                                <field name="chung_tu_lien_quan" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Search view -->
+    <record id="view_but_toan_ke_toan_search" model="ir.ui.view">
+        <field name="name">but.toan.ke.toan.search</field>
+        <field name="model">but_toan_ke_toan</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm bút toán">
+                <field name="name"/>
+                <field name="ngay_but_toan"/>
+                <field name="dien_giai"/>
+                <field name="loai_but_toan"/>
+                <filter string="Nháp" name="filter_nhap" domain="[('state', '=', 'nhap')]"/>
+                <filter string="Đã ghi sổ" name="filter_da_ghi_so" domain="[('state', '=', 'da_ghi_so')]"/>
+                <separator/>
+                <filter string="Tháng này" name="filter_thang_nay" 
+                        domain="[('ngay_but_toan', '&gt;=', (context_today() - relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Loại bút toán" name="group_loai" context="{'group_by':'loai_but_toan'}"/>
+                    <filter string="Trạng thái" name="group_state" context="{'group_by':'state'}"/>
+                    <filter string="Ngày" name="group_ngay" context="{'group_by':'ngay_but_toan'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

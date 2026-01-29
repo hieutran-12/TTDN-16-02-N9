@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- ACTIONS: Nhân viên -->
+    <record id="action_nhan_vien" model="ir.actions.act_window">
+        <field name="name">Quản lý nhân viên</field>
+        <field name="res_model">nhan_vien</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACTIONS: Danh mục -->
+    <record id="action_phong_ban" model="ir.actions.act_window">
+        <field name="name">Danh mục phòng ban</field>
+        <field name="res_model">phong_ban</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_chuc_vu" model="ir.actions.act_window">
+        <field name="name">Danh mục chức vụ</field>
+        <field name="res_model">chuc_vu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_chung_chi" model="ir.actions.act_window">
+        <field name="name">Danh mục chứng chỉ</field>
+        <field name="res_model">chung_chi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACTIONS: Lịch sử -->
+    <record id="action_lich_su_cong_tac" model="ir.actions.act_window">
+        <field name="name">Quản lý lịch sử công tác</field>
+        <field name="res_model">lich_su_cong_tac</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

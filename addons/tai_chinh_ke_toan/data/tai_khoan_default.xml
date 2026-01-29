@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ========================================== -->
+        <!-- TÀI KHOẢN TÀI SẢN (1xx)                    -->
+        <!-- ========================================== -->
+        
+        <!-- TK 111: Tiền mặt -->
+        <record id="tai_khoan_111" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">111</field>
+            <field name="ten_tai_khoan">Tiền mặt</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 112: Tiền gửi ngân hàng -->
+        <record id="tai_khoan_112" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">112</field>
+            <field name="ten_tai_khoan">Tiền gửi ngân hàng</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 131: Phải thu của khách hàng -->
+        <record id="tai_khoan_131" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">131</field>
+            <field name="ten_tai_khoan">Phải thu của khách hàng</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 152: Nguyên liệu, vật liệu -->
+        <record id="tai_khoan_152" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">152</field>
+            <field name="ten_tai_khoan">Nguyên liệu, vật liệu</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 211: TSCĐ hữu hình - Nguyên giá -->
+        <record id="tai_khoan_tai_san" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">211</field>
+            <field name="ten_tai_khoan">Tài sản cố định hữu hình - Nguyên giá</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 213: TSCĐ vô hình - Nguyên giá -->
+        <record id="tai_khoan_213" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">213</field>
+            <field name="ten_tai_khoan">Tài sản cố định vô hình - Nguyên giá</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 214: Hao mòn TSCĐ (TK điều chỉnh - Dư Có) -->
+        <record id="tai_khoan_tich_luy_khau_hao" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">214</field>
+            <field name="ten_tai_khoan">Hao mòn tài sản cố định</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- ========================================== -->
+        <!-- TÀI KHOẢN NỢ PHẢI TRẢ (3xx)               -->
+        <!-- ========================================== -->
+        
+        <!-- TK 331: Phải trả cho người bán -->
+        <record id="tai_khoan_no_phai_tra" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">331</field>
+            <field name="ten_tai_khoan">Phải trả cho người bán</field>
+            <field name="loai_tai_khoan">no_phai_tra</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 333: Thuế và các khoản phải nộp Nhà nước -->
+        <record id="tai_khoan_333" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">333</field>
+            <field name="ten_tai_khoan">Thuế và các khoản phải nộp Nhà nước</field>
+            <field name="loai_tai_khoan">no_phai_tra</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 3331: Thuế GTGT đầu ra -->
+        <record id="tai_khoan_3331" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">3331</field>
+            <field name="ten_tai_khoan">Thuế GTGT đầu ra</field>
+            <field name="loai_tai_khoan">no_phai_tra</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+            <field name="tai_khoan_cha_id" ref="tai_khoan_333"/>
+        </record>
+        
+        <!-- TK 1331: Thuế GTGT được khấu trừ -->
+        <record id="tai_khoan_1331" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">1331</field>
+            <field name="ten_tai_khoan">Thuế GTGT được khấu trừ</field>
+            <field name="loai_tai_khoan">tai_san</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- ========================================== -->
+        <!-- TÀI KHOẢN VỐN CHỦ SỞ HỮU (4xx)            -->
+        <!-- ========================================== -->
+        
+        <!-- TK 411: Vốn đầu tư của chủ sở hữu -->
+        <record id="tai_khoan_411" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">411</field>
+            <field name="ten_tai_khoan">Vốn đầu tư của chủ sở hữu</field>
+            <field name="loai_tai_khoan">von_chu_so_huu</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- ========================================== -->
+        <!-- TÀI KHOẢN DOANH THU (5xx, 7xx)            -->
+        <!-- ========================================== -->
+        
+        <!-- TK 511: Doanh thu bán hàng và cung cấp dịch vụ -->
+        <record id="tai_khoan_511" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">511</field>
+            <field name="ten_tai_khoan">Doanh thu bán hàng và cung cấp dịch vụ</field>
+            <field name="loai_tai_khoan">doanh_thu</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 711: Thu nhập khác -->
+        <record id="tai_khoan_711" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">711</field>
+            <field name="ten_tai_khoan">Thu nhập khác</field>
+            <field name="loai_tai_khoan">doanh_thu</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- ========================================== -->
+        <!-- TÀI KHOẢN CHI PHÍ (6xx, 8xx)              -->
+        <!-- ========================================== -->
+        
+        <!-- TK 621: Chi phí nguyên liệu, vật liệu -->
+        <record id="tai_khoan_621" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">621</field>
+            <field name="ten_tai_khoan">Chi phí nguyên liệu, vật liệu</field>
+            <field name="loai_tai_khoan">chi_phi</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 622: Chi phí nhân công -->
+        <record id="tai_khoan_622" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">622</field>
+            <field name="ten_tai_khoan">Chi phí nhân công</field>
+            <field name="loai_tai_khoan">chi_phi</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 627: Chi phí quản lý doanh nghiệp -->
+        <record id="tai_khoan_chi_phi" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">627</field>
+            <field name="ten_tai_khoan">Chi phí quản lý doanh nghiệp</field>
+            <field name="loai_tai_khoan">chi_phi</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 642: Chi phí khấu hao TSCĐ -->
+        <record id="tai_khoan_chi_phi_khau_hao" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">642</field>
+            <field name="ten_tai_khoan">Chi phí khấu hao tài sản cố định</field>
+            <field name="loai_tai_khoan">chi_phi</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+        <!-- TK 811: Chi phí khác -->
+        <record id="tai_khoan_811" model="tai_khoan_ke_toan">
+            <field name="ma_tai_khoan">811</field>
+            <field name="ten_tai_khoan">Chi phí khác</field>
+            <field name="loai_tai_khoan">chi_phi</field>
+            <field name="la_tai_khoan_tong_hop" eval="False"/>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view for Chi tiết hóa đơn mua -->
+    <record id="view_chi_tiet_hoa_don_mua_tree" model="ir.ui.view">
+        <field name="name">chi.tiet.hoa.don.mua.tree</field>
+        <field name="model">chi_tiet_hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <tree string="Chi tiết hóa đơn mua">
+                <field name="hoa_don_mua_id"/>
+                <field name="ten_san_pham"/>
+                <field name="so_luong"/>
+                <field name="don_gia"/>
+                <field name="thanh_tien"/>
+                <field name="tien_thue"/>
+                <field name="tong_cong"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form view for Chi tiết hóa đơn mua -->
+    <record id="view_chi_tiet_hoa_don_mua_form" model="ir.ui.view">
+        <field name="name">chi.tiet.hoa.don.mua.form</field>
+        <field name="model">chi_tiet_hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <form string="Chi tiết hóa đơn mua">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="hoa_don_mua_id"/>
+                            <field name="ten_san_pham"/>
+                            <field name="so_luong"/>
+                        </group>
+                        <group>
+                            <field name="don_gia"/>
+                            <field name="thue_id"/>
+                            <field name="thanh_tien"/>
+                            <field name="tien_thue"/>
+                            <field name="tong_cong"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="la_tai_san"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Search view for Chi tiết hóa đơn mua -->
+    <record id="view_chi_tiet_hoa_don_mua_search" model="ir.ui.view">
+        <field name="name">chi.tiet.hoa.don.mua.search</field>
+        <field name="model">chi_tiet_hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm chi tiết hóa đơn mua">
+                <field name="hoa_don_mua_id"/>
+                <field name="ten_san_pham"/>
+                <group expand="0" string="Group By">
+                    <filter string="Hóa đơn" name="group_hoa_don" context="{'group_by':'hoa_don_mua_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

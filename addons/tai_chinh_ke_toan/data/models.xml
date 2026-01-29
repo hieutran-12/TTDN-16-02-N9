@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Định nghĩa external ID cho các models để sử dụng trong security CSV -->
+    <data noupdate="1">
+        <record id="model_tai_khoan_ke_toan" model="ir.model">
+            <field name="name">Tài khoản kế toán</field>
+            <field name="model">tai_khoan_ke_toan</field>
+        </record>
+        <record id="model_hoa_don_mua" model="ir.model">
+            <field name="name">Hóa đơn mua</field>
+            <field name="model">hoa_don_mua</field>
+        </record>
+        <record id="model_chi_tiet_hoa_don_mua" model="ir.model">
+            <field name="name">Chi tiết hóa đơn mua</field>
+            <field name="model">chi_tiet_hoa_don_mua</field>
+        </record>
+        <record id="model_but_toan_ke_toan" model="ir.model">
+            <field name="name">Bút toán kế toán</field>
+            <field name="model">but_toan_ke_toan</field>
+        </record>
+        <record id="model_chi_tiet_but_toan" model="ir.model">
+            <field name="name">Chi tiết bút toán</field>
+            <field name="model">chi_tiet_but_toan</field>
+        </record>
+        <record id="model_thue" model="ir.model">
+            <field name="name">Thuế suất</field>
+            <field name="model">thue</field>
+        </record>
+        <record id="model_so_cai" model="ir.model">
+            <field name="name">Sổ cái kế toán</field>
+            <field name="model">so_cai</field>
+        </record>
+        <record id="model_so_chi_tiet" model="ir.model">
+            <field name="name">Sổ chi tiết kế toán</field>
+            <field name="model">so_chi_tiet</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action for Tài khoản kế toán -->
+        <record id="action_tai_khoan_ke_toan" model="ir.actions.act_window">
+            <field name="name">Tài khoản kế toán</field>
+            <field name="res_model">tai_khoan_ke_toan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Bút toán kế toán -->
+        <record id="action_but_toan_ke_toan" model="ir.actions.act_window">
+            <field name="name">Bút toán kế toán</field>
+            <field name="res_model">but_toan_ke_toan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Sổ cái -->
+        <record id="action_so_cai" model="ir.actions.act_window">
+            <field name="name">Sổ cái</field>
+            <field name="res_model">so_cai</field>
+            <field name="view_mode">tree,pivot,graph</field>
+        </record>
+
+        <!-- Action for Sổ chi tiết -->
+        <record id="action_so_chi_tiet" model="ir.actions.act_window">
+            <field name="name">Sổ chi tiết</field>
+            <field name="res_model">chi_tiet_but_toan</field>
+            <field name="view_mode">tree,pivot</field>
+        </record>
+
+        <!-- 
+        ==========================================
+        ACTION HÓA ĐƠN MUA - FIXED 
+        ==========================================
+        Đảm bảo sử dụng view ĐÚNG (view_hoa_don_mua_tree/form)
+        KHÔNG dùng view pending (view_tai_san_pending_tree/form)
+        -->
+        <record id="action_hoa_don_mua" model="ir.actions.act_window">
+            <field name="name">Hóa đơn mua</field>
+            <field name="res_model">hoa_don_mua</field>
+            <field name="view_mode">tree,form</field>
+            <!-- CRITICAL: Chỉ định rõ view IDs để tránh conflict với pending views -->
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_hoa_don_mua_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_hoa_don_mua_form')})
+            ]"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo hóa đơn mua đầu tiên
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Chi tiết hóa đơn mua -->    
+        <record id="action_chi_tiet_hoa_don_mua" model="ir.actions.act_window">
+            <field name="name">Chi tiết hóa đơn mua</field>
+            <field name="res_model">chi_tiet_hoa_don_mua</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Thuế suất -->
+        <record id="action_thue" model="ir.actions.act_window">
+            <field name="name">Thuế suất</field>
+            <field name="res_model">thue</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Khấu hao tài sản -->
+        <record id="action_khau_hao_tai_san" model="ir.actions.act_window">
+            <field name="name">Khấu hao tài sản</field>
+            <field name="res_model">khau_hao_tai_san</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Action for Thanh lý tài sản -->
+        <record id="action_thanh_ly_tai_san" model="ir.actions.act_window">
+            <field name="name">Thanh lý tài sản</field>
+            <field name="res_model">thanh_ly_tai_san</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Báo cáo tài chính -->
+        <record id="action_bao_cao_tai_chinh" model="ir.actions.act_window">
+            <field name="name">Báo cáo tài chính</field>
+            <field name="res_model">so_cai</field>
+            <field name="view_mode">pivot,graph</field>
+        </record>
+    </data>
+</odoo>

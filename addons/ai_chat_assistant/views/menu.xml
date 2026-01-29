@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_ai_chat_assistant"
+                  name="AI Chat Assistant"
+                  sequence="0"
+                  icon="fa-robot"/>
+
+        <menuitem id="menu_ai_chat_logs"
+                  name="Chat Logs"
+                  parent="menu_ai_chat_assistant"
+                  action="action_ai_chat_log"
+                  sequence="10"/>
+    </data>
+</odoo>

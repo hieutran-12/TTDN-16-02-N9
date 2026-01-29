@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+
+# Odoo
+*.log
+.odoo/
+addons/*/__pycache__/
+
+# OS / WSL
+*.Zone.Identifier
+=*
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

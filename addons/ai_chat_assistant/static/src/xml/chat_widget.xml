@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="ai_chat_assistant.chat_widget">
+        <div class="ai-chat-widget" id="aiChatWidget">
+
+            <!-- Header -->
+            <div class="chat-header" id="chatHeader">
+                <div>
+                    <h3>🤖 AI Assistant</h3>
+                    <p style="margin: 0; font-size: 12px; opacity: 0.8;">
+                        Trợ lý AI thông minh
+                    </p>
+                </div>
+                <div class="chat-header-icons">
+                    <button id="minimizeBtn">−</button>
+                    <button id="closeBtn">✕</button>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message message-ai">
+                    <div class="message-avatar">🤖</div>
+                    <div>
+                        <div class="message-content">
+                            Xin chào! 👋 Tôi là AI Assistant của bạn.
+                        </div>
+                        <div class="message-time">Vừa xong</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input -->
+            <div class="chat-input-area">
+                <textarea
+                    class="chat-input"
+                    id="chatInput"
+                    placeholder="Gõ tin nhắn..."
+                    rows="1"></textarea>
+
+                <button class="chat-send-btn" id="sendBtn">📤</button>
+            </div>
+
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,7 @@
+[options]
+addons_path = addons
+db_host = localhost
+db_password = odoo
+db_user = odoo
+db_port = 5432
+xmlrpc_port = 7000

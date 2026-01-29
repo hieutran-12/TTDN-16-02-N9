@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for Bút toán kế toán -->
+        <record id="seq_but_toan_ke_toan" model="ir.sequence">
+            <field name="name">Bút toán kế toán</field>
+            <field name="code">but_toan_ke_toan</field>
+            <field name="prefix">BT</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        <!-- Sequence for Hóa đơn mua -->
+        <record id="seq_hoa_don_mua" model="ir.sequence">
+            <field name="name">Hóa đơn mua</field>
+            <field name="code">hoa_don_mua</field>
+            <field name="prefix">HDM</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

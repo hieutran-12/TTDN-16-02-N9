@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Tạo tiền tệ Việt Nam Đồng nếu chưa tồn tại -->
+        <record id="currency_vnd" model="res.currency">
+            <field name="name">VND</field>
+            <field name="full_name">Việt Nam Đồng</field>
+            <field name="symbol">₫</field>
+            <field name="position">after</field>
+            <field name="decimal_places">0</field>
+            <field name="active">1</field>
+        </record>
+        
+        <!-- Set mặc định tiền tệ là VND cho công ty -->
+        <function model="res.company" name="write">
+            <value eval="[ref('base.main_company')]"/>
+            <value eval="{'currency_id': ref('currency_vnd')}"/>
+        </function>
+    </data>
+</odoo>

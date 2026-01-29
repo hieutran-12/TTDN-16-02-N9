@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view -->
+    <record id="view_so_chi_tiet_tree" model="ir.ui.view">
+        <field name="name">so.chi.tiet.tree</field>
+        <field name="model">so_chi_tiet</field>
+        <field name="arch" type="xml">
+            <tree string="Sổ chi tiết">
+                <field name="ngay_but_toan"/>
+                <field name="but_toan_id"/>
+                <field name="tai_khoan_id"/>
+                <field name="dien_giai"/>
+                <field name="tien_no" sum="Tổng Nợ"/>
+                <field name="tien_co" sum="Tổng Có"/>
+                <field name="doi_tac_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Pivot view -->
+    <record id="view_so_chi_tiet_pivot" model="ir.ui.view">
+        <field name="name">so.chi.tiet.pivot</field>
+        <field name="model">so_chi_tiet</field>
+        <field name="arch" type="xml">
+            <pivot string="Sổ chi tiết - Phân tích">
+                <field name="tai_khoan_id" type="row"/>
+                <field name="doi_tac_id" type="row"/>
+                <field name="ngay_but_toan" type="col" interval="month"/>
+                <field name="tien_no" type="measure"/>
+                <field name="tien_co" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    
+    <!-- Search view -->
+    <record id="view_so_chi_tiet_search" model="ir.ui.view">
+        <field name="name">so.chi.tiet.search</field>
+        <field name="model">so_chi_tiet</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tai_khoan_id"/>
+                <field name="ngay_but_toan"/>
+                <field name="doi_tac_id"/>
+                <field name="dien_giai"/>
+                <filter string="Tháng này" name="filter_thang_nay"
+                        domain="[('ngay_but_toan', '&gt;=', (context_today() - relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Tài khoản" name="group_tai_khoan" context="{'group_by':'tai_khoan_id'}"/>
+                    <filter string="Đối tác" name="group_doi_tac" context="{'group_by':'doi_tac_id'}"/>
+                    <filter string="Tháng" name="group_thang" context="{'group_by':'ngay_but_toan:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

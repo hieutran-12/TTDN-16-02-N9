@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tai_khoan_ke_toan_user,tai_khoan_ke_toan.user,model_tai_khoan_ke_toan,base.group_user,1,1,1,1
+access_but_toan_ke_toan_user,but_toan_ke_toan.user,model_but_toan_ke_toan,base.group_user,1,1,1,1
+access_chi_tiet_but_toan_user,chi_tiet_but_toan.user,model_chi_tiet_but_toan,base.group_user,1,1,1,1
+access_hoa_don_mua_user,hoa_don_mua.user,model_hoa_don_mua,base.group_user,1,1,1,1
+access_chi_tiet_hoa_don_mua_user,chi_tiet_hoa_don_mua.user,model_chi_tiet_hoa_don_mua,base.group_user,1,1,1,1
+access_thue_user,thue.user,model_thue,base.group_user,1,1,1,1
+access_so_cai_user,so_cai.user,model_so_cai,base.group_user,1,1,1,1
+access_so_chi_tiet_user,so_chi_tiet.user,model_so_chi_tiet,base.group_user,1,1,1,1
+access_cong_no_mua_user,cong_no_mua.user,model_cong_no_mua,base.group_user,1,1,1,1
+access_chi_tiet_thanh_toan_no_user,chi_tiet_thanh_toan_no.user,model_chi_tiet_thanh_toan_no,base.group_user,1,1,1,1
+access_khau_hao_tai_san_user,khau_hao_tai_san.user,model_khau_hao_tai_san,base.group_user,1,1,1,1
+access_thanh_ly_tai_san_user,thanh_ly_tai_san.user,model_thanh_ly_tai_san,base.group_user,1,1,1,1

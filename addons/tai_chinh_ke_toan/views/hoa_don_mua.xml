@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view for Hóa đơn mua - EXPLICITLY ENABLE CREATE -->
+    <record id="view_hoa_don_mua_tree" model="ir.ui.view">
+        <field name="name">hoa.don.mua.tree</field>
+        <field name="model">hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <tree string="Hóa đơn mua" 
+                  create="1" 
+                  edit="1" 
+                  delete="1"
+                  decoration-info="state=='nhap'" 
+                  decoration-success="state=='hoan_thanh'">
+                <field name="name"/>
+                <field name="ma_hoa_don"/>
+                <field name="ngay_hoa_don"/>
+                <field name="nha_cung_cap_id"/>
+                <field name="tong_tien"/>
+                <field name="tien_thue"/>
+                <field name="tong_thanh_toan"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form view for Hóa đơn mua -->
+    <record id="view_hoa_don_mua_form" model="ir.ui.view">
+        <field name="name">hoa.don.mua.form</field>
+        <field name="model">hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <form string="Hóa đơn mua">
+                <header>
+                    <button name="action_xac_nhan" type="object" string="✓ Xác nhận" class="btn-primary" attrs="{'invisible': [('state', '!=', 'nhap')]}"/>
+                    <button name="action_hoan_thanh" type="object" string="✓ Hoàn thành" attrs="{'invisible': [('state', '!=', 'xac_nhan')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="nhap,xac_nhan,hoan_thanh"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="ma_hoa_don"/>
+                            <field name="ngay_hoa_don"/>
+                            <field name="nha_cung_cap_id"/>
+                        </group>
+                        <group>
+                            <field name="currency_id"/>
+                            <field name="nguoi_mua_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="tong_tien" widget="monetary"/>
+                            <field name="tien_thue" widget="monetary"/>
+                            <field name="tong_thanh_toan" widget="monetary"/>
+                        </group>
+                        <group>
+                            <field name="co_tai_san" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                            <field name="asset_status" readonly="1" attrs="{'invisible': [('co_tai_san', '=', False)]}"/>
+                            <field name="ma_tai_san_created" readonly="1" attrs="{'invisible': [('asset_status', '!=', 'created')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Chi tiết hóa đơn">
+                            <field name="chi_tiet_ids">
+                                <tree editable="bottom">
+                                    <field name="ten_san_pham"/>
+                                    <field name="so_luong"/>
+                                    <field name="don_gia"/>
+                                    <field name="thue_id"/>
+                                    <field name="thanh_tien" sum="Tổng"/>
+                                    <field name="tien_thue" sum="Tổng thuế"/>
+                                    <field name="tong_cong" sum="Tổng cộng"/>
+                                    <field name="la_tai_san"/>
+                                    <field name="currency_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Ghi chú">
+                            <field name="ghi_chu"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Search view for Hóa đơn mua -->
+    <record id="view_hoa_don_mua_search" model="ir.ui.view">
+        <field name="name">hoa.don.mua.search</field>
+        <field name="model">hoa_don_mua</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm hóa đơn mua">
+                <field name="name"/>
+                <field name="ma_hoa_don"/>
+                <field name="nha_cung_cap_id"/>
+                <field name="ngay_hoa_don"/>
+                <filter string="Nháp" name="filter_nhap" domain="[('state', '=', 'nhap')]"/>
+                <filter string="Xác nhận" name="filter_xac_nhan" domain="[('state', '=', 'xac_nhan')]"/>
+                <filter string="Hoàn thành" name="filter_hoan_thanh" domain="[('state', '=', 'hoan_thanh')]"/>
+                <separator/>
+                <filter string="Tháng này" name="filter_thang_nay" 
+                        domain="[('ngay_hoa_don', '&gt;=', (context_today() - relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Nhà cung cấp" name="group_ncc" context="{'group_by':'nha_cung_cap_id'}"/>
+                    <filter string="Trạng thái" name="group_state" context="{'group_by':'state'}"/>
+                    <filter string="Tháng" name="group_thang" context="{'group_by':'ngay_hoa_don'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bao_cao_tai_chinh_pivot" model="ir.ui.view">
+        <field name="name">bao.cao.tai.chinh.pivot</field>
+        <field name="model">but_toan_ke_toan</field>
+        <field name="arch" type="xml">
+            <pivot string="Báo cáo tài chính">
+                <field name="loai_but_toan" type="row"/>
+                <field name="ngay_but_toan" type="col" interval="month"/>
+                <field name="tong_tien_no" type="measure"/>
+                <field name="tong_tien_co" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

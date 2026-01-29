@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_thanh_ly_tai_san_tree" model="ir.ui.view">
+        <field name="name">thanh_ly_tai_san.tree</field>
+        <field name="model">thanh_ly_tai_san</field>
+        <field name="arch" type="xml">
+            <tree string="Thanh lý tài sản">
+                <field name="ma_thanh_ly"/>
+                <field name="ma_tai_san"/>
+                <field name="ten_tai_san"/>
+                <field name="ngay_thanh_ly"/>
+                <field name="gia_tri_thanh_ly" widget="monetary"/>
+                <field name="chenh_lech_thanh_ly" widget="monetary"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_thanh_ly_tai_san_form" model="ir.ui.view">
+        <field name="name">thanh_ly_tai_san.form</field>
+        <field name="model">thanh_ly_tai_san</field>
+        <field name="arch" type="xml">
+            <form string="Thanh lý tài sản">
+                <header>
+                    <button name="action_confirm" string="✓ Xác nhận" type="object" class="btn-success" states="draft"/>
+                    <button name="action_done" string="✓ Hoàn thành" type="object" class="btn-success" states="confirmed"/>
+                    <button name="action_cancel" string="✗ Hủy" type="object" class="btn-danger" states="draft,confirmed"/>
+                    <field name="trang_thai" widget="statusbar" options="{'clickable': False}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Thông tin thanh lý">
+                            <field name="ma_thanh_ly"/>
+                            <field name="ma_tai_san"/>
+                            <field name="ten_tai_san"/>
+                            <field name="ngay_thanh_ly"/>
+                            <field name="nguoi_xu_ly_id"/>
+                        </group>
+                        <group string="Giá trị thanh lý">
+                            <field name="gia_tri_thanh_ly" widget="monetary"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Thông tin tài sản">
+                            <field name="nguyen_gia" widget="monetary"/>
+                            <field name="khau_hao_luy_ke" widget="monetary"/>
+                            <field name="gia_tri_con_lai" widget="monetary" readonly="1"/>
+                        </group>
+                        <group string="Kết quả">
+                            <field name="chenh_lech_thanh_ly" widget="monetary" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <separator string="Tài khoản kế toán"/>
+                    <group>
+                        <field name="tai_khoan_nguyen_gia_id"/>
+                        <field name="tai_khoan_hao_mon_id"/>
+                    </group>
+
+                    <separator string="Lý do thanh lý"/>
+                    <field name="ly_do" nolabel="1" placeholder="Nhập lý do thanh lý..."/>
+
+                    <separator string="Bút toán"/>
+                    <field name="but_toan_id" readonly="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_thanh_ly_tai_san_search" model="ir.ui.view">
+        <field name="name">thanh_ly_tai_san.search</field>
+        <field name="model">thanh_ly_tai_san</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm thanh lý">
+                <field name="ma_thanh_ly"/>
+                <field name="ma_tai_san"/>
+                <field name="ten_tai_san"/>
+                <filter string="Nháp" name="filter_draft" domain="[('trang_thai', '=', 'draft')]"/>
+                <filter string="Đã xác nhận" name="filter_confirmed" domain="[('trang_thai', '=', 'confirmed')]"/>
+                <filter string="Hoàn thành" name="filter_done" domain="[('trang_thai', '=', 'done')]"/>
+                <filter string="Đã hủy" name="filter_cancelled" domain="[('trang_thai', '=', 'cancelled')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_thanh_ly_tai_san" model="ir.actions.act_window">
+        <field name="name">Thanh lý tài sản</field>
+        <field name="res_model">thanh_ly_tai_san</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

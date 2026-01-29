@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Menu Chính -->
+        <menuitem id="menu_tai_chinh_ke_toan_root" name="Kế toán" sequence="0"/>
+
+        <!-- Danh Mục -->
+        <menuitem id="menu_danh_muc_tai_chinh" name="Danh mục" parent="menu_tai_chinh_ke_toan_root" sequence="10"/>
+
+        <menuitem id="menu_tai_khoan_ke_toan" name="Tài khoản kế toán" parent="menu_danh_muc_tai_chinh" sequence="10"
+                  action="action_tai_khoan_ke_toan"/>
+        <menuitem id="menu_thue" name="Thuế suất" parent="menu_danh_muc_tai_chinh" sequence="20"
+                  action="action_thue"/>
+
+        <!-- Nghiệp Vụ -->
+        <menuitem id="menu_nghiep_vu_tai_chinh" name="Nghiệp vụ" parent="menu_tai_chinh_ke_toan_root" sequence="20"/>
+
+        <menuitem id="menu_but_toan_ke_toan" name="Bút toán kế toán" parent="menu_nghiep_vu_tai_chinh" sequence="10"
+                  action="action_but_toan_ke_toan"/>
+        <menuitem id="menu_hoa_don_mua" name="Hóa đơn mua" parent="menu_nghiep_vu_tai_chinh" sequence="20"
+                  action="action_hoa_don_mua"/>
+        <menuitem id="menu_khau_hao_tai_san" name="Khấu hao tài sản" parent="menu_nghiep_vu_tai_chinh" sequence="30"
+                  action="action_khau_hao_tai_san"/>
+        <menuitem id="menu_thanh_ly_tai_san" name="Thanh lý tài sản" parent="menu_nghiep_vu_tai_chinh" sequence="40"
+                  action="action_thanh_ly_tai_san"/>
+
+        <!-- Báo Cáo -->
+        <menuitem id="menu_bao_cao_tai_chinh_root" name="Báo cáo" parent="menu_tai_chinh_ke_toan_root" sequence="30"/>
+
+        <menuitem id="menu_so_cai" name="Sổ cái" parent="menu_bao_cao_tai_chinh_root" sequence="10"
+                  action="action_so_cai"/>
+        <menuitem id="menu_so_chi_tiet" name="Sổ chi tiết" parent="menu_bao_cao_tai_chinh_root" sequence="20"
+                  action="action_so_chi_tiet"/>
+        <menuitem id="menu_bao_cao_tai_chinh" name="Báo cáo tài chính" parent="menu_bao_cao_tai_chinh_root" sequence="30"
+                  action="action_bao_cao_tai_chinh"/>
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_thue_tree" model="ir.ui.view">
+        <field name="name">thue.tree</field>
+        <field name="model">thue</field>
+        <field name="arch" type="xml">
+            <tree string="Thuế suất">
+                <field name="ten_thue"/>
+                <field name="ty_le_thue"/>
+                <field name="tai_khoan_thue_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_thue_form" model="ir.ui.view">
+        <field name="name">thue.form</field>
+        <field name="model">thue</field>
+        <field name="arch" type="xml">
+            <form string="Thuế suất">
+                <sheet>
+                    <group>
+                        <field name="ten_thue"/>
+                        <field name="ty_le_thue"/>
+                        <field name="tai_khoan_thue_id"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

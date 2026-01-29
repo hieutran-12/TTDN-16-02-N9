@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cron jobs moved to accounting module (tai_chinh_ke_toan) -->
+    </data>
+</odoo>

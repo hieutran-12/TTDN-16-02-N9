@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action for Tài khoản kế toán -->
+        <record id="action_tai_khoan_ke_toan" model="ir.actions.act_window">
+            <field name="name">Tài khoản kế toán</field>
+            <field name="res_model">tai_khoan_ke_toan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_tai_khoan_ke_toan_tree"/>
+        </record>
+
+        <!-- Action for Bút toán kế toán -->
+        <record id="action_but_toan_ke_toan" model="ir.actions.act_window">
+            <field name="name">Bút toán kế toán</field>
+            <field name="res_model">but_toan_ke_toan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_but_toan_ke_toan_tree"/>
+        </record>
+
+        <!-- Action for Sổ cái kế toán -->
+        <record id="action_so_cai" model="ir.actions.act_window">
+            <field name="name">Sổ cái kế toán</field>
+            <field name="res_model">so_cai</field>
+            <field name="view_mode">tree,pivot</field>
+            <field name="view_id" ref="view_so_cai_tree"/>
+        </record>
+
+        <!-- Action for Sổ chi tiết -->
+        <record id="action_so_chi_tiet" model="ir.actions.act_window">
+            <field name="name">Sổ chi tiết</field>
+            <field name="res_model">chi_tiet_but_toan</field>
+            <field name="view_mode">tree,pivot</field>
+            <field name="view_id" ref="view_so_chi_tiet_tree"/>
+        </record>
+
+        <!-- Action for Hóa đơn mua -->
+        <record id="action_hoa_don_mua" model="ir.actions.act_window">
+            <field name="name">Hóa đơn mua</field>
+            <field name="res_model">hoa_don_mua</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action for Chi tiết hóa đơn mua -->
+        <record id="action_chi_tiet_hoa_don_mua" model="ir.actions.act_window">
+            <field name="name">Chi tiết hóa đơn mua</field>
+            <field name="res_model">chi_tiet_hoa_don_mua</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_chi_tiet_hoa_don_mua_tree"/>
+        </record>
+
+        <!-- Action for Thuế suất -->
+        <record id="action_thue" model="ir.actions.act_window">
+            <field name="name">Thuế suất</field>
+            <field name="res_model">thue</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_thue_tree"/>
+        </record>
+
+        <!-- Action for Báo cáo tài chính -->
+        <record id="action_bao_cao_tai_chinh" model="ir.actions.act_window">
+            <field name="name">Báo cáo tài chính</field>
+            <field name="res_model">so_cai</field>
+            <field name="view_mode">pivot</field>
+        </record>
+    </data>
+</odoo>

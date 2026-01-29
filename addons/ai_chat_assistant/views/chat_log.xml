@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Action -->
+        <record id="action_ai_chat_log" model="ir.actions.act_window">
+            <field name="name">Chat Logs</field>
+            <field name="res_model">ai_chat_assistant.chat_log</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">Lịch sử tương tác với AI Chat Assistant</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_ai_chat_log_tree" model="ir.ui.view">
+            <field name="name">ai_chat_assistant.chat_log.tree</field>
+            <field name="model">ai_chat_assistant.chat_log</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="create_date"/>
+                    <field name="user_id"/>
+                    <field name="message"/>
+                    <field name="intent"/>
+                    <field name="method"/>
+                    <field name="success"/>
+                    <field name="confidence_score"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_ai_chat_log_form" model="ir.ui.view">
+            <field name="name">ai_chat_assistant.chat_log.form</field>
+            <field name="model">ai_chat_assistant.chat_log</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="create_date"/>
+                                <field name="method"/>
+                            </group>
+                            <group>
+                                <field name="intent"/>
+                                <field name="success"/>
+                                <field name="confidence_score"/>
+                            </group>
+                        </group>
+
+                        <group string="Tin nhắn">
+                            <field name="message" nolabel="1"/>
+                        </group>
+
+                        <group string="Phản hồi">
+                            <field name="response" nolabel="1"/>
+                        </group>
+
+                        <group string="Entities">
+                            <field name="extracted_entities" nolabel="1"/>
+                        </group>
+
+                        <group string="Thông tin xử lý"
+                               attrs="{'invisible': [('error_message', '=', False)]}">
+                            <field name="processing_time"/>
+                            <field name="error_message"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

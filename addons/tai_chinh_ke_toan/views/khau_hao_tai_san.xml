@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_khau_hao_tai_san_tree" model="ir.ui.view">
+        <field name="name">khau_hao_tai_san.tree</field>
+        <field name="model">khau_hao_tai_san</field>
+        <field name="arch" type="xml">
+            <tree string="Khấu hao tài sản">
+                <field name="ma_khau_hao"/>
+                <field name="ma_tai_san"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <field name="gia_tri_khau_hao" widget="monetary"/>
+                <field name="gia_tri_con_lai" widget="monetary"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_khau_hao_tai_san_form" model="ir.ui.view">
+        <field name="name">khau_hao_tai_san.form</field>
+        <field name="model">khau_hao_tai_san</field>
+        <field name="arch" type="xml">
+            <form string="Khấu hao tài sản">
+                <header>
+                    <field name="trang_thai" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Thông tin tài sản">
+                            <field name="ma_khau_hao"/>
+                            <field name="ma_tai_san"/>
+                            <field name="phuong_phap_khau_hao"/>
+                        </group>
+                        <group string="Thời gian">
+                            <field name="thang"/>
+                            <field name="nam"/>
+                            <field name="ngay_khau_hao"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Giá trị">
+                            <field name="nguyen_gia" widget="monetary"/>
+                            <field name="gia_tri_truoc_khau_hao" widget="monetary"/>
+                            <field name="gia_tri_khau_hao" widget="monetary"/>
+                            <field name="gia_tri_con_lai" widget="monetary" readonly="1"/>
+                        </group>
+                        <group string="Tuyên bố">
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                    <separator string="Tài khoản kế toán"/>
+                    <group>
+                        <field name="tai_khoan_nguyen_gia_id"/>
+                        <field name="tai_khoan_hao_mon_id"/>
+                        <field name="tai_khoan_chi_phi_id"/>
+                    </group>
+                    <separator string="Ghi chú"/>
+                    <field name="ghi_chu" nolabel="1"/>
+                    <separator string="Bút toán"/>
+                    <field name="but_toan_id" readonly="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_khau_hao_tai_san_search" model="ir.ui.view">
+        <field name="name">khau_hao_tai_san.search</field>
+        <field name="model">khau_hao_tai_san</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm khấu hao">
+                <field name="ma_khau_hao"/>
+                <field name="ma_tai_san"/>
+                <filter string="Dự kiến" name="filter_du_kien" domain="[('trang_thai', '=', 'du_kien')]"/>
+                <filter string="Đã ghi nhận" name="filter_da_ghi_nhan" domain="[('trang_thai', '=', 'da_ghi_nhan')]"/>
+                <filter string="Đã hủy" name="filter_huy" domain="[('trang_thai', '=', 'huy')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_khau_hao_tai_san" model="ir.actions.act_window">
+        <field name="name">Khấu hao tài sản</field>
+        <field name="res_model">khau_hao_tai_san</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

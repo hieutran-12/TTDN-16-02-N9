@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view -->
+    <record id="view_tai_khoan_ke_toan_tree" model="ir.ui.view">
+        <field name="name">tai.khoan.ke.toan.tree</field>
+        <field name="model">tai_khoan_ke_toan</field>
+        <field name="arch" type="xml">
+            <tree string="Tài khoản kế toán" decoration-muted="not active">
+                <field name="ma_tai_khoan"/>
+                <field name="ten_tai_khoan"/>
+                <field name="loai_tai_khoan"/>
+                <field name="du_no" widget="monetary"/>
+                <field name="du_co" widget="monetary"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form view -->
+    <record id="view_tai_khoan_ke_toan_form" model="ir.ui.view">
+        <field name="name">tai.khoan.ke.toan.form</field>
+        <field name="model">tai_khoan_ke_toan</field>
+        <field name="arch" type="xml">
+            <form string="Tài khoản kế toán">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ma_tai_khoan" class="oe_inline"/>
+                            -
+                            <field name="ten_tai_khoan" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="ma_tai_khoan"/>
+                            <field name="ten_tai_khoan"/>
+                            <field name="loai_tai_khoan"/>
+                        </group>
+                        <group>
+                            <field name="tai_khoan_cha_id" domain="[('id', '!=', id)]"/>
+                            <field name="la_tai_khoan_tong_hop"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <separator string="📚 SỔ DƯ"/>
+                    <group>
+                        <group>
+                            <label for="du_no" string="💰 Dư Nợ"/>
+                            <div class="alert alert-warning">
+                                <field name="du_no" widget="monetary" readonly="1" nolabel="1"/>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="du_co" string="💰 Dư Có"/>
+                            <div class="alert alert-info">
+                                <field name="du_co" widget="monetary" readonly="1" nolabel="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <separator string="📋 CHI TIẾT BỤT TOÁN"/>
+                    <field name="chi_tiet_ids" readonly="1" nolabel="1">
+                        <tree>
+                            <field name="but_toan_id"/>
+                            <field name="dien_giai"/>
+                            <field name="tien_no" sum="Tổng Nợ" widget="monetary"/>
+                            <field name="tien_co" sum="Tổng Có" widget="monetary"/>
+                            <field name="doi_tac_id"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Search view -->
+    <record id="view_tai_khoan_ke_toan_search" model="ir.ui.view">
+        <field name="name">tai.khoan.ke.toan.search</field>
+        <field name="model">tai_khoan_ke_toan</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm tài khoản">
+                <field name="ma_tai_khoan"/>
+                <field name="ten_tai_khoan"/>
+                <field name="loai_tai_khoan"/>
+                <filter string="Kích hoạt" name="filter_active" domain="[('active', '=', True)]"/>
+                <separator/>
+                <filter string="Tài sản" name="filter_tai_san" domain="[('loai_tai_khoan', '=', 'tai_san')]"/>
+                <filter string="Chi phí" name="filter_chi_phi" domain="[('loai_tai_khoan', '=', 'chi_phi')]"/>
+                <filter string="Nợ phải trả" name="filter_no_phai_tra" domain="[('loai_tai_khoan', '=', 'no_phai_tra')]"/>
+                <filter string="Doanh thu" name="filter_doanh_thu" domain="[('loai_tai_khoan', '=', 'doanh_thu')]"/>
+                <separator/>
+                <filter string="Có dư nợ" name="filter_co_du_no" domain="[('du_no', '>', 0)]"/>
+                <filter string="Có dư có" name="filter_co_du_co" domain="[('du_co', '>', 0)]"/>
+                <filter string="Tài khoản tổng hợp" name="filter_tong_hop" domain="[('la_tai_khoan_tong_hop', '=', True)]"/>
+                <filter string="Tài khoản chi tiết" name="filter_chi_tiet" domain="[('la_tai_khoan_tong_hop', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Loại tài khoản" name="group_loai" context="{'group_by':'loai_tai_khoan'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
