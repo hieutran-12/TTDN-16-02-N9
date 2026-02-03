@@ -21,6 +21,16 @@
 - [📞 Liên Hệ](#-liên-hệ)
 
 ---
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/odoo/odoo-original.svg" width="36"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="36"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="36"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="36"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="36"/>
+</p>
+<p align="center">
+  👉 <a href="doc/NHOM_9.pdf"><b>Xem poster PDF đầy đủ</b></a>
+</p>
 
 ## 🎯 Tổng Quan
 
