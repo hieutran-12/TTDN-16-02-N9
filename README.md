@@ -1,4 +1,10 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
+<p align="center">
+  <img src="doc/fitdnu_logo.png" alt="Logo trường" width="30%"/>
+  <img src="doc/logo.jpg" alt="Logo khoa" width="30%"/>
+  <img src="doc/anh.jpg" alt="Hình ảnh khoa" width="30%"/>
+</p>
+
 
 **Giải pháp ERP tích hợp cho doanh nghiệp Việt Nam**
 
@@ -22,7 +28,6 @@
 
 ---
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/odoo/odoo-original.svg" width="36"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="36"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="36"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="36"/>
