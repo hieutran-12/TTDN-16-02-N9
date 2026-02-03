@@ -1,8 +1,8 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
 <p align="center">
-  <img src="docs/images/dainam_university.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
-  <img src="docs/images/aiot_lab.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
-  <img src="docs/images/khoa_cntt.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="doc/anh.jpg" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="doc/logo.jpg" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="doc/fitdnu_logo.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
 </p>
 
 <p align="center">
