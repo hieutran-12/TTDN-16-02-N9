@@ -118,13 +118,10 @@ Dự án này là một **giải pháp ERP doanh nghiệp** được xây dựng
 
 **Tính năng chính**:
 - ✅ Quản lý thông tin tài sản chi tiết
-- ✅ **Khấu hao tự động hàng tháng** (tính lũy kế, giá trị còn lại)
 - ✅ Lịch sử sử dụng & bảo trì
 - ✅ Mượn/trả tài sản cho nhân viên
 - ✅ Kiểm kê tài sản định kỳ
-- ✅ Thanh lý tài sản (tính lãi/lỗ)
-- ✅ Tích hợp với kế toán (tự động sinh bút toán)
-- ✅ Tính toán giá trị còn lại real-time
+- ✅ Quản lý vòng đời, vị trí tài sản
 
 **Model chính**: `tai_san`, `khau_hao`, `lich_su_su_dung`, `phieu_muon`, `phieu_kiem_ke`, `thanh_ly_tai_san`
 
@@ -142,8 +139,8 @@ Dự án này là một **giải pháp ERP doanh nghiệp** được xây dựng
 - ✅ **Bút toán kép tự động** (Nợ/Có)
 - ✅ Sổ cái & Sổ chi tiết
 - ✅ Quản lý công nợ nhà cung cấp
-- ✅ Khấu hao tài sản (tích hợp)
-- ✅ Thanh lý tài sản (tích hợp)
+- ✅ Khấu hao tài sản 
+- ✅ Thanh lý tài sản 
 - ✅ Báo cáo tài chính
 - ✅ Quản lý thuế GTGT
 
