@@ -1,13 +1,24 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
 
-<p align="center">
-  <img src="doc/anh.jpg" width="200" height='200'
-       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
-  <img src="doc/logo.jpg" width="200" height='200'
-       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
-  <img src="doc/fitdnu_logo.png" width="200" height='200'
-       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="doc/anh.jpg" height="140"/>
+    </td>
+    <td align="center">
+      <img src="doc/logo.jpg" height="140"/>
+    </td>
+    <td align="center">
+      <img src="doc/fitdnu_logo.png" height="140"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>Đại Nam University</b></td>
+    <td align="center"><b>AIoT Lab</b></td>
+    <td align="center"><b>Khoa CNTT</b></td>
+  </tr>
+</table>
+
 
 
 <p align="center">
