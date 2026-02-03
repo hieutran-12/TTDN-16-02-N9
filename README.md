@@ -1,9 +1,16 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
 <p align="center">
-  <img src="doc/fitdnu_logo.png" alt="Logo trường" width="30%"/>
-  <img src="doc/logo.jpg" alt="Logo khoa" width="30%"/>
-  <img src="doc/anh.jpg" alt="Hình ảnh khoa" width="30%"/>
+  <img src="docs/images/dainam_university.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="docs/images/aiot_lab.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="docs/images/khoa_cntt.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
 </p>
+
+<p align="center">
+  <b>Trường Đại học Đại Nam</b> &nbsp;•&nbsp;
+  <b>AIoT Lab</b> &nbsp;•&nbsp;
+  <b>Khoa Công Nghệ Thông Tin</b>
+</p>
+
 
 
 **Giải pháp ERP tích hợp cho doanh nghiệp Việt Nam**
