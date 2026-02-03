@@ -1,9 +1,14 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
+
 <p align="center">
-  <img src="doc/anh.jpg" width="220" style="margin: 0 10px; border-radius: 12px;" />
-  <img src="doc/logo.jpg" width="220" style="margin: 0 10px; border-radius: 12px;" />
-  <img src="doc/fitdnu_logo.png" width="220" style="margin: 0 10px; border-radius: 12px;" />
+  <img src="doc/anh.jpg" width="200"
+       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
+  <img src="doc/logo.jpg" width="200"
+       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
+  <img src="doc/fitdnu_logo.png" width="200"
+       style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
 </p>
+
 
 <p align="center">
   <b>Trường Đại học Đại Nam</b> &nbsp;•&nbsp;
