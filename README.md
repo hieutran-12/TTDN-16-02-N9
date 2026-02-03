@@ -1,11 +1,11 @@
 # 🏢 Odoo 15 - Hệ Thống Quản Lý Tài Sản & Kế Toán
 
 <p align="center">
-  <img src="doc/anh.jpg" width="200"
+  <img src="doc/anh.jpg" width="200" height='200'
        style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
-  <img src="doc/logo.jpg" width="200"
+  <img src="doc/logo.jpg" width="200" height='200'
        style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
-  <img src="doc/fitdnu_logo.png" width="200"
+  <img src="doc/fitdnu_logo.png" width="200" height='200'
        style="margin: 0 12px; padding: 12px; background:#fff; border-radius: 16px;" />
 </p>
 
